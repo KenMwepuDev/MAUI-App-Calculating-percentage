@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppExemplePerformance.MainPage"
+             BackgroundColor="#1C4A38"
+             Shell.NavBarIsVisible="False">
+
+    <Grid RowSpacing="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+
+            <Frame Grid.Column="1"
+                   WidthRequest="60"
+                   HeightRequest="60"
+                   CornerRadius="100"
+                   Margin="10, 10, 40, 10"
+                   Padding="10"
+                   BackgroundColor="#97B6A0">
+                <Image Source="dotnet_bot.png"/>
+            </Frame>
+            <Label Grid.Column="0"
+                   Text="FIST CALCULATOR"
+                   VerticalTextAlignment="Center"
+                   Margin="10, 0, 0, 0"
+                   FontSize="20"
+                   FontAttributes="Bold"/>
+        </Grid>
+        <Grid Grid.Row="1"
+              RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="200"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" 
+                   Text="My Balance"
+                   Margin="20, 0, 0, 0"
+                   FontSize="18"/>
+
+            <Frame Grid.Row="1" 
+                   Margin="10, 0, 10, 0"
+                   CornerRadius="20"
+                   BackgroundColor="#7DDE82"
+                   BorderColor="Transparent">
+
+                <Frame.Background>
+                    <!-- StartPoint defaults to (0,0) -->
+                    <LinearGradientBrush EndPoint="1,0">
+                        <GradientStop Color="#7DDE82"
+                          Offset="0.1" />
+                        <GradientStop Color="#EDFB8B"
+                          Offset="1.0" />
+                    </LinearGradientBrush>
+                </Frame.Background>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Frame Grid.Column="0"
+                               BackgroundColor="#EEFB8A" 
+                               BorderColor="#EEFB8A"
+                               CornerRadius="100"
+                               Padding="10">
+
+                            <HorizontalStackLayout
+                                Spacing="5">
+                                <Label Text="Main value"
+                                       TextColor="Black"/>
+                                <Label Text="(USD)"
+                                       TextColor="Black"
+                                       FontAttributes="Bold"/>
+                            </HorizontalStackLayout>
+                        </Frame>
+                        
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="60"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="1"
+                               Source="simspuce"/>
+                    </Grid>
+                    
+                    <VerticalStackLayout Grid.Row="2">
+                        <Entry x:Name="InputMainValue"
+                               Placeholder="0,000 USD"
+                               FontSize="30"
+                               FontAttributes="Bold"
+                               TextColor="White"
+                               PlaceholderColor="White"
+                               Keyboard="Numeric"/>
+                        <Label Text="USD Dollar"/>
+                    </VerticalStackLayout>
+                </Grid>
+            </Frame>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Frame
+                Margin="10, 0, 10, 10"
+                CornerRadius="20"
+                BackgroundColor="#3F7A5B"
+                BorderColor="Transparent">
+
+                <Grid RowSpacing="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0"
+                               Text="Calculating"
+                               FontSize="14"
+                               FontAttributes="Bold"/>
+                        <Label Grid.Column="1"
+                               Text="more info"
+                               TextColor="#A2DB98"
+                               FontAttributes="Bold"
+                               TextDecorations="Underline"/>
+                    </Grid>
+
+                    <Frame Grid.Row="1"
+                           CornerRadius="15"
+                           BackgroundColor="#488C68"
+                           BorderColor="Transparent"
+                           HeightRequest="80">
+
+                        <Grid ColumnSpacing="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Frame Grid.Column="0"
+                                   CornerRadius="100"
+                                   BorderColor="Transparent"
+                                   BackgroundColor="#97B6A0">
+
+                                <Image Source="dotnet_bot.png"/>
+                            </Frame>
+                            
+                            <VerticalStackLayout Grid.Column="1">
+                                <Label Text="Montannt"
+                                       FontAttributes="Bold"
+                                       FontSize="16"/>
+                                <Label Text="Money"/>
+                            </VerticalStackLayout>
+
+                            <Entry x:Name="InputMontant"
+                                   Placeholder="0,0 USD"
+                                   PlaceholderColor="White"
+                                   Keyboard="Numeric"
+                                   Grid.Column="2"
+                                   FontAttributes="Bold"
+                                   TextChanged="InputMontant_TextChanged"/>
+                        </Grid>
+                    </Frame>
+                    
+                    <Frame Grid.Row="2"
+                           CornerRadius="15"
+                           BackgroundColor="#488C68"
+                           BorderColor="Transparent"
+                           HeightRequest="80">
+
+                        <Frame.Background>
+                            <!-- StartPoint defaults to (0,0) -->
+                            <LinearGradientBrush EndPoint="1,0">
+                                <GradientStop Color="#6B967A"
+                          Offset="0.1" />
+                                <GradientStop Color="#ACD59E"
+                          Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Frame.Background>
+                        
+                        <Grid ColumnSpacing="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Frame Grid.Column="0"
+                                   CornerRadius="100"
+                                   BorderColor="Transparent"
+                                   BackgroundColor="#97B6A0">
+
+                                <Image Source="dotnet_bot.png"/>
+                            </Frame>
+
+                            <VerticalStackLayout Grid.Column="1">
+                                <Label Text="Pourcentage"
+                                       FontAttributes="Bold"
+                                       FontSize="16"/>
+                                <Label Text="Money"/>
+                            </VerticalStackLayout>
+
+                            <Entry x:Name="InputPourcente"
+                                   Placeholder="0,0 %"
+                                   PlaceholderColor="White"
+                                   Keyboard="Numeric"
+                                   Grid.Column="2"
+                                   FontAttributes="Bold"
+                                   TextChanged="InputPourcente_TextChanged"/>
+                        </Grid>
+                    </Frame>
+
+                    <Button x:Name="ResetValue"
+                            Text="Reset"
+                            Grid.Row="3"
+                            BackgroundColor="#A5FF7A"
+                            TextColor="Black"
+                            FontAttributes="Bold"
+                            FontSize="17"
+                            Clicked="ResetValue_Clicked"/>
+                </Grid>
+            </Frame>
+        </Grid>
+    </Grid>
+</ContentPage>
